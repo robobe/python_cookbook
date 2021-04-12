@@ -1,0 +1,3 @@
+pyzmq
+msgpack
+git+https://github.com/jackersson/gstreamer-python.git

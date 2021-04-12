@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message DemoMap {
+    map<int32, string> map1 = 1;
+}
+
+message DemoData {
+    int32 f1 = 1;
+    string f2 = 2;
+}
+
+message Demo2Map {
+    map<string, DemoData> map1 = 1;
+}
