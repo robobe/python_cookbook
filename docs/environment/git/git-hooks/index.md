@@ -15,6 +15,14 @@ Every Git repository has a `.git/hooks` folder with a script for each hook you c
         "**/.git": false
     }
     ```
+
+
+## Sample
+```
+```
+
+!!! Warning
+    Don't forget to assign executable permission
 ## References
 - [githooks](https://githooks.com/)
 - [Get Started with Git Hooks](https://medium.com/@f3igao/get-started-with-git-hooks-5a489725c639)
