@@ -38,11 +38,7 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../../.." class="icon icon-home"> Python Cookbook</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -52,15 +48,29 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Environment</span></p>
                 <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../git/cheat-sheet/">GIT cheat sheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Git hooks</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../git/git-hooks/">GIT hooks</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="#">Mkdocs</a>
     <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Mkdocs</a>
+                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../custom_plugin/">Custom plugin</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Github Deploy</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#setup">setup</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#deploy-command">deploy command</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a>
     </li>
     </ul>
                 </li>
@@ -75,6 +85,22 @@
     </ul>
                 </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Pbr</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../pbr/">pbr</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Pdm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../pdm/">PDM</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../tags.html">Tags</a>
                     </li>
                 </ul>
       </div>
@@ -119,15 +145,17 @@
             <div class="section">
               
                 <h1 id="github-deploy">Github Deploy</h1>
-<h2 id="setup">setup</h2>
+<h2 id="deploy-command">deploy command</h2>
+<p>Deploy docs to github
+- create new branch <code>gh-pages</code></p>
+<div class="highlight"><pre><span></span><code>mkdocs gh-deploy
+</code></pre></div>
+<h2 id="setup">Setup</h2>
 <ul>
 <li>In repository <code>settings</code> select <code>pages</code></li>
 <li>Set source to branch <code>gh-pages</code> and folder to <code>/root</code></li>
 </ul>
-<p><img alt="" src="../../img/githubpages.png" /></p>
-<h2 id="deploy-command">deploy command</h2>
-<pre><code>mkdocs gh-deploy
-</code></pre>
+<p><img alt="github" src="/img/githubpages.png" /></p>
               
             </div>
           </div>
@@ -174,7 +202,6 @@
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

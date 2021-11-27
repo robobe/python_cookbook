@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>GIT hooks - Python Cookbook</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "GIT hooks";
+    var mkdocs_page_input_path = "environment/git/git-hooks/index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Python Cookbook</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Welcome to MkDocs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Environment</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Git</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../cheat-sheet/">GIT cheat sheet</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Git hooks</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">GIT hooks</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Mkdocs</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/">Mkdocs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/custom_plugin/">Custom plugin</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/github/">Github Deploy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/list/">Lists</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/tables/">Tables</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Plugins</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../mkdocs/plugins/tags/">Tags</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Pbr</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../pbr/">pbr</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Pdm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../pdm/">PDM</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../tags.html">Tags</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Python Cookbook</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Environment &raquo;</li>
+        
+      
+        
+          <li>Git &raquo;</li>
+        
+      
+        
+          <li>Git hooks &raquo;</li>
+        
+      
+    
+    <li>GIT hooks</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <p>Git hooks are scripts that Git executes automatically every time particular event occures in a Git repository.<br />
+Every Git repository has a <code>.git/hooks</code> folder with a script for each hook you can bind to.  </p>
+<h2 id="client-side-most-common-used">Client side most common used</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Hook Name</th>
+<th align="center">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">pre-commit</td>
+<td align="center">git commit</td>
+<td align="left">Call before commit<br> exiting with anything other the zero</td>
+</tr>
+<tr>
+<td align="center">post-merge</td>
+<td align="center">git merge</td>
+<td align="left">Call after merge</td>
+</tr>
+<tr>
+<td align="center">post-checkout</td>
+<td align="center">git checkout <br> git clone</td>
+<td align="left">Run hook after updating the worktree or after git clone</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Add <code>.git</code>  folder to VSCode
+<div class="highlight"><pre><span></span><code>files.exclude&quot;: {
+    &quot;**/.git&quot;: false
+}
+</code></pre></div></p>
+</div>
+<h2 id="samples">Samples</h2>
+<h3 id="minimal-bash">Minimal BASH</h3>
+<ul>
+<li>Place file name <code>pre-commit</code> in <code>.git/hook</code> folder</li>
+<li>Assign executable permission</li>
+<li>if script return error (!=0) commit cancel</li>
+<li>if script return 0 commit allowed</li>
+</ul>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#!/bin/bash
+
+echo -e &quot;git failed to commit&quot;
+
+exit 1
+</code></pre></div>
+<h3 id="minimal-python">Minimal Python</h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;git failed to commit&quot;</span><span class="p">)</span>
+
+<span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="hook-demo">Hook demo</h3>
+<p>Implement python script that check if json file can parse using <code>json.tool</code> python model
+- implement as pre-commit hook</p>
+<div class="highlight"><pre><span></span><code>python -m json.tool &lt;file name&gt;
+</code></pre></div>
+<ul>
+<li>
+<p>json file <code>demo.json</code> with error
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;line1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;line2&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>run json.tool
+<div class="highlight"><pre><span></span><code>python -m json.tool demo.json 
+<span class="c1">#</span>
+Expecting property name enclosed <span class="k">in</span> double quotes: line <span class="m">4</span> column <span class="m">1</span> <span class="o">(</span>char <span class="m">34</span><span class="o">)</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="check-json">check json</h3>
+<h3 id="commit-vscode">Commit VSCode</h3>
+<p><img alt="" src="/img/git_hook_vs_alert.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't forget to assign executable permission<br />
+<code>chmod +x .git/hook/pre-commit</code></p>
+</div>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://githooks.com/">githooks</a></li>
+<li><a href="https://medium.com/@f3igao/get-started-with-git-hooks-5a489725c639">Get Started with Git Hooks</a></li>
+<li><a href="https://levelup.gitconnected.com/raise-the-bar-of-code-quality-in-python-projects-7c49743f004f">Raise the Bar of Code Quality in Python Projects</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../mkdocs/" class="btn btn-neutral float-right" title="Mkdocs">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cheat-sheet/" class="btn btn-neutral" title="GIT cheat sheet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../cheat-sheet/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../mkdocs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

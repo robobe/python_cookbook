@@ -38,11 +38,7 @@
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../../.." class="icon icon-home"> Python Cookbook</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -52,8 +48,22 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Environment</span></p>
                 <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../git/cheat-sheet/">GIT cheat sheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Git hooks</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../git/git-hooks/">GIT hooks</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="#">Mkdocs</a>
     <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Mkdocs</a>
+                </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Custom plugin</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#project-structure">project structure</a>
@@ -85,6 +95,22 @@
     </ul>
                 </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Pbr</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../pbr/">pbr</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Pdm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../pdm/">PDM</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../tags.html">Tags</a>
                     </li>
                 </ul>
       </div>
@@ -130,46 +156,48 @@
               
                 <h1 id="custom-plugin">Custom plugin</h1>
 <h2 id="project-structure">project structure</h2>
-<pre><code>├── deploy.sh
+<div class="highlight"><pre><span></span><code>├── deploy.sh
 ├── mkdocs_plugin_include
 │   ├── __init__.py
 │   ├── plugin.py
 ├── README.md
 ├── requirements.txt
 ├── setup.py
-</code></pre>
+</code></pre></div>
 <h3 id="__init__py"><code>__init__.py</code></h3>
-<pre><code class="language-python"># load class name `CodeInclude` into project namespace
-from .plugin import CodeInclude
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># load class name `CodeInclude` into project namespace</span>
+<span class="kn">from</span> <span class="nn">.plugin</span> <span class="kn">import</span> <span class="n">CodeInclude</span>
+</code></pre></div>
 <h3 id="pluginpy">plugin.py</h3>
 <ul>
 <li>override <code>on_page_markdown</code></li>
 </ul>
 <h3 id="setuppy">setup.py</h3>
-<pre><code class="language-python"># The following rows are important to register your plugin.
-# The format is &quot;(plugin name) = (plugin folder):(class name)&quot;
-# Without them, mkdocs will not be able to recognize it.
-entry_points={
-    'mkdocs.plugins': [
-        'code_include = mkdocs_plugin_include.plugin:CodeInclude'
-    ]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># The following rows are important to register your plugin.</span>
+<span class="c1"># The format is &quot;(plugin name) = (plugin folder):(class name)&quot;</span>
+<span class="c1"># Without them, mkdocs will not be able to recognize it.</span>
+<span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;mkdocs.plugins&#39;</span><span class="p">:</span> <span class="p">[</span>
+<span class="hll">        <span class="s1">&#39;code_include = mkdocs_plugin_include.plugin:CodeInclude&#39;</span>
+</span>    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="usage">usage</h3>
 <h4 id="source-file">Source file</h4>
-<pre><code>{{include(&quot;/home/user/projects/mkdocs-plugin-include/tests/test_file.txt&quot;)}}
-</code></pre>
+<div class="highlight"><pre><span></span><code>{{include(&quot;/home/user/projects/mkdocs-plugin-include/tests/test_file.txt&quot;)}}
+</code></pre></div>
 <ul>
 <li>include in markdown part of source file between line 2-4</li>
 </ul>
-<pre><code>{ {include(&quot;/home/user/projects/mkdocs-plugin-include/tests/test_file.txt&quot;,2,4)} }
-</code></pre>
-<p>!!! warning
-    Remove space between curly braces</p>
+<div class="highlight"><pre><span></span><code>{ {include(&quot;/home/user/projects/mkdocs-plugin-include/tests/test_file.txt&quot;,2,4)} }
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remove space between curly braces</p>
+</div>
 <h4 id="result">Result</h4>
-<pre><code>{{include(&quot;/home/user/projects/mkdocs-plugin-include/tests/test_file.txt&quot;,2,4)}}
-</code></pre>
+<div class="highlight"><pre><span></span><code>{{include(&quot;/home/user/projects/mkdocs-plugin-include/tests/test_file.txt&quot;,2,4)}}
+</code></pre></div>
 <h2 id="resource">Resource</h2>
 <ul>
 <li><a href="https://github.com/fmaida/hello-dolly-mkdocs-plugin">hello-dolly-mkdocs-plugin</a></li>
@@ -185,7 +213,7 @@ entry_points={
         <a href="../github/" class="btn btn-neutral float-right" title="Github Deploy">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../.." class="btn btn-neutral" title="Welcome to MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="Mkdocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -211,7 +239,7 @@ entry_points={
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../github/" style="color: #fcfcfc">Next &raquo;</a></span>
@@ -221,7 +249,6 @@ entry_points={
     <script>var base_url = '../../..';</script>
     <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
     <script defer>
         window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);

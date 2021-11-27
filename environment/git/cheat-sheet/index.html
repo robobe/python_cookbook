@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Lists - Python Cookbook</title>
+  <title>GIT cheat sheet - Python Cookbook</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Lists";
-    var mkdocs_page_input_path = "environment/mkdocs/list.md";
+    var mkdocs_page_name = "GIT cheat sheet";
+    var mkdocs_page_input_path = "environment/git/cheat-sheet.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -48,41 +48,35 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Environment</span></p>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="#">Git</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../git/cheat-sheet/">GIT cheat sheet</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Git</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">GIT cheat sheet</a>
+    <ul class="current">
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Git hooks</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../git/git-hooks/">GIT hooks</a>
+                <li class="toctree-l3"><a class="reference internal" href="../git-hooks/">GIT hooks</a>
                 </li>
     </ul>
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Mkdocs</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../">Mkdocs</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Mkdocs</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/">Mkdocs</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../custom_plugin/">Custom plugin</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/custom_plugin/">Custom plugin</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../github/">Github Deploy</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/github/">Github Deploy</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Lists</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#result">Result</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#order-list-with-numbers">Order List with numbers</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#result_1">Result</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/list/">Lists</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../tables/">Tables</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../mkdocs/tables/">Tables</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Plugins</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../plugins/tags/">Tags</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../mkdocs/plugins/tags/">Tags</a>
                 </li>
     </ul>
                 </li>
@@ -130,11 +124,11 @@
         
       
         
-          <li>Mkdocs &raquo;</li>
+          <li>Git &raquo;</li>
         
       
     
-    <li>Lists</li>
+    <li>GIT cheat sheet</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -146,38 +140,30 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lists">Lists</h1>
-<div class="highlight"><pre><span></span><code>- Item A
-- Item B
-    - Nested with two `tabs`
-        - Nested agian with two `tabs`
+                <h3 id="update-local-list-of-remote-branches">update local list of remote branches</h3>
+<div class="highlight"><pre><span></span><code>git remote update origin --prune
 </code></pre></div>
-<h3 id="result">Result</h3>
-<ul>
-<li>Item A</li>
-<li>Item B<ul>
-<li>Nested with two <code>tabs</code><ul>
-<li>Nested agian with two <code>tabs</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="order-list-with-numbers">Order List with numbers</h3>
-<div class="highlight"><pre><span></span><code>1. Line 1
-2. Line 2
-      1. Indent with two `tabs`
-      2. Indent with two `tabs`
+<h3 id="change-prompt-to-show-git-current-branch">Change prompt to show git current branch</h3>
+<p><div class="highlight"><pre><span></span><code>export PS1=&quot;\[\033[36m\]\u\[\033[m\]@\[\033[32m\] \[\033[33;1m\]\w\[\033[m\] (\$(git branch 2&gt;/dev/null | grep &#39;^*&#39; | colrm 1 2)) \$
 </code></pre></div>
-<h3 id="result_1">Result</h3>
-<ol>
-<li>Line 1</li>
-<li>Line 2<ol>
-<li>Indent with two <code>tabs</code></li>
-<li>Indent with two <code>tabs</code></li>
-</ol>
-</li>
-</ol>
+- <code>\033[0m</code>: No Color<br />
+- <code>\033[36m</code>: Cyan<br />
+- <code>\033[33;1m</code>: Yellow<br />
+- \u\: user<br />
+- \w\: pwd  </p>
+<p><img alt="" src="/img/ps1.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight"><pre><span></span><code>Black        0;30     Dark Gray     1;30
+Red          0;31     Light Red     1;31
+Green        0;32     Light Green   1;32
+Brown/Orange 0;33     Yellow        1;33
+Blue         0;34     Light Blue    1;34
+Purple       0;35     Light Purple  1;35
+Cyan         0;36     Light Cyan    1;36
+Light Gray   0;37     White         1;37
+</code></pre></div>
+</div>
               
             </div>
           </div>
@@ -185,10 +171,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tables/" class="btn btn-neutral float-right" title="Tables">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../git-hooks/" class="btn btn-neutral float-right" title="GIT hooks">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../github/" class="btn btn-neutral" title="Github Deploy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../.." class="btn btn-neutral" title="Welcome to MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -214,10 +200,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../github/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../.." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../tables/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../git-hooks/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
