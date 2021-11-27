@@ -17,8 +17,8 @@ Every Git repository has a `.git/hooks` folder with a script for each hook you c
     ```
 
 
-## Sample
-- Minima hook bash script
+## Samples
+### Minimal BASH
 - Place file name `pre-commit` in `.git/hook` folder
 - Assign executable permission
 - if script return error (!=0) commit cancel
@@ -27,10 +27,20 @@ Every Git repository has a `.git/hooks` folder with a script for each hook you c
 ```
 #!/bin/bash
 
-echo -e "pre commit"
+#!/bin/bash
 
-exit 0
+echo -e "git failed to commit"
+
+exit 1
 ```
+
+### Minimal Python
+```python
+
+```
+
+### Commit VSCode
+![](/img/git_hook_vs_alert.png)
 
 !!! Warning
     Don't forget to assign executable permission
