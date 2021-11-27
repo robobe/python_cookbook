@@ -1,0 +1,11 @@
+site_name: Python Cookbook
+theme:
+  name: readthedocs
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  
+plugins:
+  - tags
