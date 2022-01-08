@@ -13,7 +13,7 @@
     
     
       
-        <title>GIT hooks - Python Cookbook</title>
+        <title>Use black, mypy, pylint and other to code like pro - Python Cookbook</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#client-side-most-common-used" class="md-skip">
+        <a href="#use-black-mypy-pylint-and-other-to-code-like-pro" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GIT hooks
+              Use black, mypy, pylint and other to code like pro
             
           </span>
         </div>
@@ -382,12 +382,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
       
       
       
@@ -408,11 +410,147 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../code_better/black_pylint_mypy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Use black, mypy, pylint and other to code like pro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Use black, mypy, pylint and other to code like pro
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#black" class="md-nav__link">
+    Black
+  </a>
+  
+    <nav class="md-nav" aria-label="Black">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode-config" class="md-nav__link">
+    VSCode config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mypy" class="md-nav__link">
+    mypy
+  </a>
+  
+    <nav class="md-nav" aria-label="mypy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pylint" class="md-nav__link">
+    pylint
+  </a>
+  
+    <nav class="md-nav" aria-label="pylint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    VSCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pylintrc" class="md-nav__link">
+    .pylintrc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-lint-in-code" class="md-nav__link">
+    control lint in code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-to-check" class="md-nav__link">
+    Tools to check
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-bandit" class="md-nav__link">
+    - bandit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -429,14 +567,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
@@ -459,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheat-sheet/" class="md-nav__link">
+      <a href="../../git/cheat-sheet/" class="md-nav__link">
         GIT cheat sheet
       </a>
     </li>
@@ -471,14 +607,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_2" type="checkbox" id="__nav_4_2_2" >
       
       
       
@@ -499,103 +633,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          GIT hooks
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../git/git-hooks/" class="md-nav__link">
         GIT hooks
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#client-side-most-common-used" class="md-nav__link">
-    Client side most common used
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#samples" class="md-nav__link">
-    Samples
-  </a>
-  
-    <nav class="md-nav" aria-label="Samples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#minimal-bash" class="md-nav__link">
-    Minimal BASH
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#minimal-python" class="md-nav__link">
-    Minimal Python
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hook-demo" class="md-nav__link">
-    Hook demo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-json" class="md-nav__link">
-    check json
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commit-vscode" class="md-nav__link">
-    Commit VSCode
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -732,6 +774,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -740,51 +784,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#client-side-most-common-used" class="md-nav__link">
-    Client side most common used
+  <a href="#black" class="md-nav__link">
+    Black
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#samples" class="md-nav__link">
-    Samples
-  </a>
-  
-    <nav class="md-nav" aria-label="Samples">
+    <nav class="md-nav" aria-label="Black">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#minimal-bash" class="md-nav__link">
-    Minimal BASH
+  <a href="#usage" class="md-nav__link">
+    usage
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#minimal-python" class="md-nav__link">
-    Minimal Python
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hook-demo" class="md-nav__link">
-    Hook demo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-json" class="md-nav__link">
-    check json
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commit-vscode" class="md-nav__link">
-    Commit VSCode
+  <a href="#vscode-config" class="md-nav__link">
+    VSCode config
   </a>
   
 </li>
@@ -795,8 +811,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#mypy" class="md-nav__link">
+    mypy
+  </a>
+  
+    <nav class="md-nav" aria-label="mypy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pylint" class="md-nav__link">
+    pylint
+  </a>
+  
+    <nav class="md-nav" aria-label="pylint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    VSCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pylintrc" class="md-nav__link">
+    .pylintrc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-lint-in-code" class="md-nav__link">
+    control lint in code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-to-check" class="md-nav__link">
+    Tools to check
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-bandit" class="md-nav__link">
+    - bandit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -814,103 +898,64 @@
               
                 
 
-  <h1>GIT hooks</h1>
-
-<p>Git hooks are scripts that Git executes automatically every time particular event occures in a Git repository.<br />
-Every Git repository has a <code>.git/hooks</code> folder with a script for each hook you can bind to.  </p>
-<h2 id="client-side-most-common-used">Client side most common used<a class="headerlink" href="#client-side-most-common-used" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th align="center">Hook Name</th>
-<th align="center">Event</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">pre-commit</td>
-<td align="center">git commit</td>
-<td align="left">Call before commit<br> exiting with anything other the zero</td>
-</tr>
-<tr>
-<td align="center">post-merge</td>
-<td align="center">git merge</td>
-<td align="left">Call after merge</td>
-</tr>
-<tr>
-<td align="center">post-checkout</td>
-<td align="center">git checkout <br> git clone</td>
-<td align="left">Run hook after updating the worktree or after git clone</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Add <code>.git</code>  folder to VSCode
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>files.exclude&quot;: {
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    &quot;**/.git&quot;: false
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>}
-</code></pre></div></p>
-</div>
-<h2 id="samples">Samples<a class="headerlink" href="#samples" title="Permanent link">&para;</a></h2>
-<h3 id="minimal-bash">Minimal BASH<a class="headerlink" href="#minimal-bash" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Place file name <code>pre-commit</code> in <code>.git/hook</code> folder</li>
-<li>Assign executable permission</li>
-<li>if script return error (!=0) commit cancel</li>
-<li>if script return 0 commit allowed</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>#!/bin/bash
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>#!/bin/bash
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>echo -e &quot;git failed to commit&quot;
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>exit 1
+<h1 id="use-black-mypy-pylint-and-other-to-code-like-pro">Use black, mypy, pylint and other to code like pro<a class="headerlink" href="#use-black-mypy-pylint-and-other-to-code-like-pro" title="Permanent link">&para;</a></h1>
+<h2 id="black">Black<a class="headerlink" href="#black" title="Permanent link">&para;</a></h2>
+<p>Format python code automatically</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip install black
 </code></pre></div>
-<h3 id="minimal-python">Minimal Python<a class="headerlink" href="#minimal-python" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ch">#!/usr/bin/env python3</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;git failed to commit&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<h3 id="usage">usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>black &lt;file or folder to format&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># check only </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>black --check &lt;file or folder to format&gt;
 </code></pre></div>
-<h3 id="hook-demo">Hook demo<a class="headerlink" href="#hook-demo" title="Permanent link">&para;</a></h3>
-<p>Implement python script that check if json file can parse using <code>json.tool</code> python model
-- implement as pre-commit hook</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>python -m json.tool &lt;file name&gt;
+<h3 id="vscode-config">VSCode config<a class="headerlink" href="#vscode-config" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">&quot;editor.formatOnSave&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">&quot;editor.formatOnPaste&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nt">&quot;python.formatting.provider&quot;</span><span class="p">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="err">??</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nt">&quot;python.formatting.blackArgs&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="s2">&quot;-t&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="s2">&quot;py37&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">]</span>
 </code></pre></div>
-<ul>
-<li>
-<p>json file <code>demo.json</code> with error
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="nt">&quot;line1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="nt">&quot;line2&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span>
+&nbsp;<br />
+&nbsp;  </p>
+<h2 id="mypy">mypy<a class="headerlink" href="#mypy" title="Permanent link">&para;</a></h2>
+<p>Mypy is a static type checker to check python annotations</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>pip install mypy
+</code></pre></div>
+<h3 id="usage_1">usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>mypy &lt;filename&gt;.py
+</code></pre></div>
+<h2 id="pylint">pylint<a class="headerlink" href="#pylint" title="Permanent link">&para;</a></h2>
+<p>Python code analysis</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>pip install pylint
+</code></pre></div>
+<h3 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">&quot;python.linting.pylintEnabled&quot;</span><span class="p">:</span> <span class="kc">true</span>
+</code></pre></div>
+<h3 id="pylintrc">.pylintrc<a class="headerlink" href="#pylintrc" title="Permanent link">&para;</a></h3>
+<p>Add <code>.pylintrc</code> to control lint </p>
+<p>for example: disabled missing docstring
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">[MASTER]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="na">disable</span><span class="o">=</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="na">C0114, # (missing-module-docstring)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="na">C0115  # (missing-class-docstring)</span>
 </code></pre></div></p>
-</li>
-<li>
-<p>run json.tool
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>python -m json.tool demo.json 
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1">#</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>Expecting property name enclosed <span class="k">in</span> double quotes: line <span class="m">4</span> column <span class="m">1</span> <span class="o">(</span>char <span class="m">34</span><span class="o">)</span>
-</code></pre></div></p>
-</li>
-</ul>
-<h3 id="check-json">check json<a class="headerlink" href="#check-json" title="Permanent link">&para;</a></h3>
-<h3 id="commit-vscode">Commit VSCode<a class="headerlink" href="#commit-vscode" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="/img/git_hook_vs_alert.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Don't forget to assign executable permission<br />
-<code>chmod +x .git/hook/pre-commit</code></p>
-</div>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h3 id="control-lint-in-code">control lint in code<a class="headerlink" href="#control-lint-in-code" title="Permanent link">&para;</a></h3>
+<p>Disabled on specific line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">class</span> <span class="nc">Point3D</span><span class="p">:</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>                  <span class="c1"># pylint: disable=invalid-name</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="n">z</span><span class="p">:</span> <span class="nb">int</span>
+</code></pre></div>
+<p>lint still warning <code>invalid-name</code> on <code>y,z</code> variable</p>
+<h2 id="tools-to-check">Tools to check<a class="headerlink" href="#tools-to-check" title="Permanent link">&para;</a></h2>
+<h2 id="-bandit">- bandit<a class="headerlink" href="#-bandit" title="Permanent link">&para;</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://githooks.com/">githooks</a></li>
-<li><a href="https://medium.com/@f3igao/get-started-with-git-hooks-5a489725c639">Get Started with Git Hooks</a></li>
-<li><a href="https://levelup.gitconnected.com/raise-the-bar-of-code-quality-in-python-projects-7c49743f004f">Raise the Bar of Code Quality in Python Projects</a></li>
+<li><a href="https://medium.com/codex/use-black-mypy-and-pylint-to-make-your-python-code-more-professional-b594512f4362">Use black, mypy, and pylint to make your Python code more professional</a></li>
 </ul>
 
               
@@ -925,7 +970,7 @@ Every Git repository has a <code>.git/hooks</code> folder with a script for each
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../cheat-sheet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GIT cheat sheet" rel="prev">
+        <a href="../../../dataclasses/dc_dict/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dataclass Dict relations" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -934,20 +979,20 @@ Every Git repository has a <code>.git/hooks</code> folder with a script for each
               <span class="md-footer__direction">
                 Previous
               </span>
-              GIT cheat sheet
+              Dataclass Dict relations
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../pbr/" class="md-footer__link md-footer__link--next" aria-label="Next: pbr" rel="next">
+        <a href="../../git/cheat-sheet/" class="md-footer__link md-footer__link--next" aria-label="Next: GIT cheat sheet" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              pbr
+              GIT cheat sheet
             </div>
           </div>
           <div class="md-footer__button md-icon">
