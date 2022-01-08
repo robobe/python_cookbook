@@ -7,4 +7,11 @@ log = logging.getLogger(__name__)
 async def hello():
     log.info("hello world")
 
-asyncio.run(hello())
+def main():
+    loop = asyncio.get_event_loop()
+    loop.create_task(hello())
+
+
+    loop.run_forever()
+
+main()
